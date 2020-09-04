@@ -9,5 +9,9 @@ before running the MD to avoid unphysical contatcs between atoms.
 
 
 # Compile & Use 
-The code is written in FORTRAN95 , and it can simply compiled by any fortran compile, for example, one way is 
+The code is written in FORTRAN95, the main code is the program 'md_nve_bodies.f95' which uses the module
+'md_module_bodies.f95'. The program can  be simply compiled by any compatible fortran compile, for example, one way is: 
 
+'gfortran md_module_bodies.f95 md_nve_bodies.f95' 
+
+The
