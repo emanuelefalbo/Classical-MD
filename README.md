@@ -10,7 +10,7 @@ before running the MD to avoid unphysical contatcs between atoms.
 
 # Use & Compilation
 The code is written in FORTRAN95, the main code is the program `md_nve_bodies.f95` which uses the module
-`md_module_bodies.f95`. Three files need to be present in working directory the `md.in` file, the coordinates of the systems
+`md_module_bodies.f95`. Three files need to be present in working directory: the `md.in` file, the coordinates of the systems
 in an xyz-formatted file, and a file named `connection.txt` containing the bound atoms. The `md.in` file modules the criteria for the dynamics: dt = the time step,
 nstep = total number of steps, nout = prints nout times the coordinates and thermodynamic quantities, decll = the lenght of the cubic cell,
 and rattle = 1 (0) turns on (off) the contraint on the atoms in the `connection.txt`. This last file needs to be a two columns file, containing bonds informations. For example, if bonds are between the atoms indexed as 1 and 3 , and 2 and 4, the first column can be written as:
