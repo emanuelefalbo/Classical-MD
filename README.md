@@ -11,3 +11,4 @@ before running the MD to avoid unphysical contatcs between atoms.
 # Compile & Use 
 The code is written in FORTRAN95 , and it can simply compiled by any fortran compile, for example, one way is 
 
+l
