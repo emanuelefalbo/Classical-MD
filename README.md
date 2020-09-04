@@ -15,6 +15,7 @@ in an xyz-formatted file, and a file named `connection.txt` containing the bound
 nstep = total number of steps, nout = prints nout times the coordinates and thermodynamic quantities, decll = the lenght of the cubic cell,
 and rattle = 1 (0) turns on (off) the contraint on the atoms in the `connection.txt`. This last file needs to be a two columns file, containing bonds informations. For example, if bonds are between the atoms indexed as 1 and 3 , and 2 and 4, the first column can be written as:
 
+| -  | - |
 | 1  | 3 |
 | 2  | 4 |
 
