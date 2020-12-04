@@ -1,0 +1,10 @@
+Input NameList
+&ctrl
+dt=0.001
+nstep=1000
+nout=1
+dcell=20.0
+rattle=0
+pbc=1
+Rcut=6.0
+/
