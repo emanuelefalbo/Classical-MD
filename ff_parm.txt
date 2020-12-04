@@ -1,0 +1,12 @@
+Parmeters for FF 
+
+BOND
+1000 1.52 
+
+ANGLE
+100 104.5
+
+DIHEDRALS
+
+LJ
+3.50 0.66
