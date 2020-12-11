@@ -9,7 +9,7 @@ before running the MD to avoid unphysical contatcs between atoms.
 
 # Compilation
 
-The program can be simply compiled by any compatible fortran compiler, for example, one way is: 
+The program can be simply compiled by any compatible fortran compiler, despite only gfortran has been tested: 
 
 `gfortran -o md config_io_module.f95 md_module_bodies.f95 md_nve_bodies.f95`
 
