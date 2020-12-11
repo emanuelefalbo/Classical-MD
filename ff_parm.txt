@@ -1,4 +1,4 @@
-Parmeters for FF 
+Parmeters for Carbon FF 
 
 BOND
 1000 1.52 
@@ -9,4 +9,4 @@ ANGLE
 DIHEDRALS
 
 LJ
-3.50 0.66
+1.9080 0.1094 
