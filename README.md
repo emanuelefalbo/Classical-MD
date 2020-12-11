@@ -35,4 +35,10 @@ The proram can the be run as
 where file.xyz is the system for which the dynamics is performed. The trajectory.xyz and md_output.dat files are returned 
 containing respectively the dynamics along the time (xyz-formatted coordinates), and thermochemistry of the system. 
 
+# Working Example
+
+The `chain.xyz` is atomic chain of four carbon atoms. Its values from the OPLS force field are in the ff_parm.txt file
+
+`$ ./build chain.xyz`
+`$ ./md chain.xyz`
 
