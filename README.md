@@ -37,7 +37,7 @@ containing respectively the dynamics along the time (xyz-formatted coordinates),
 
 # Working Example
 
-The `chain.xyz` is atomic chain of four carbon atoms. Its values from the OPLS force field are in the ff_parm.txt file
+The `chain.xyz` is an atomic chain of four carbon atoms. Its values from the OPLS force field are in the ff_parm.txt file
 
 `$ ./build chain.xyz`
 `$ ./md chain.xyz`
