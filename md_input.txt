@@ -6,5 +6,5 @@ nout=1
 dcell=20.0
 rattle=0
 pbc=1
-Rcut=6.0
+Rcut=8.0
 /
