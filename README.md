@@ -9,7 +9,7 @@ before running the MD to avoid unphysical contatcs between atoms.
 
 # Compilation
 
-The program can be simply compiled by any compatible fortran compile, for example, one way is: 
+The program can be simply compiled by any compatible fortran compiler, for example, one way is: 
 
 `gfortran -o md config_io_module.f95 md_module_bodies.f95 md_nve_bodies.f95`
 
@@ -21,10 +21,9 @@ The code is written in FORTRAN95, the main code is the program `md_nve_bodies.f9
 nstep = total number of steps, nout = prints nout times the coordinates and thermodynamic quantities, decll = the lenght of the cubic cell,
 and rattle = 1 (0) turns on (off) the contraint on the atoms in the `connection.txt`. This last file needs to be a two columns file, containing bonds informations. For example, if bonds are between the atoms indexed as 1 and 3 , and 2 and 4, the first column can be written as:
 
-| 2 |
-| 1  | 3 |
-| ------------- | ------------- |
-| 2 | 4  |
+2
+1 3
+2 4
 
 
 Before running the program, the`connection.txt` must be created. This is is done by running the program `$ ./build file.xyz`.
