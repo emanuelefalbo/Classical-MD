@@ -11,7 +11,7 @@
 !
 !  Date:         October 2020 
 !
-!  Language:     Fortran-95
+!  Language:     Fortran-95 and later
 !
 !  Description:  The program performs a molecular dynamics (MD) from coordinate file xyz type
 !                The Verlet algorithm is used throughout. The potential only accounts for 
@@ -58,13 +58,22 @@ program main
    integer:: fu=20, fu1=21, fu2=31
    integer:: No
 
-   namelist /ctrl/ dt, Nstep, dcell, Rcut, nout, rattle, pbc
-
    ! Print out  Initial Configuration
-   write(*,fmt='(a)') 'md_nve_lj'
-   write(*,fmt='(a)') 'Molecular dynamics, constant-NVE ensemble'
-   write(*,fmt='(a)') 'Particle mass=1 throughout'   
-   write(*,fmt='(a)') ' '
+   print*, 'md_nve_lj'
+   print*, 'Molecular dynamics, constant-NVE ensemble'
+   print*, 'Particle mass=1 throughout'   
+   print*, ' '
+   print*, repeat('=',25)
+   print*, ' '
+   print*, 'Programmer : Emanuele Falbo'
+   print*, 'School of Natural and Environmental Science'
+   print*, 'Newcastle University'
+   print*, 'Newcastle upon Tyne NE1 7RU'
+   print*, 'Language : Fortran-95 and later'
+   print*, ' '
+   print*, repeat('=',25)
+
+
 
    ! Default Values
    dt=0.002
@@ -75,16 +84,14 @@ program main
    pbc=1
    rattle=0
 
-   call read_nml(input_file)           ! Read in input data
-
-   ! Assign variable
    t=0.0
    mass=1.0
+   call read_nml(input_file)                                        ! Read in input data
    call read_ff(Req,keq,lj_sigma,lj_eps)                            ! Read in FF parameters
-   call read_natoms(Natm)
-   call allocate_arrays(Natm,label,r,rold,v,f,g,dcell,Rcut) 
-   call read_coords(Natm,label,r)
-   call read_connection(vec1,vec2,No)
+   call read_natoms(Natm)                                           ! Read # atoms
+   call allocate_arrays(Natm,label,r,rold,v,f,g,dcell,Rcut)         ! Allocate coordinates, label, and forces
+   call read_connection(vec1,vec2,No)                               ! Read in # of bonds
+   call read_coords(Natm,label,r)                                   ! Read in coordinates
 
     ! MD Routine
     open(fu1,file="trajectory.xyz", status="replace")    
