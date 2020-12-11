@@ -11,9 +11,8 @@ module config_io_module
   integer :: ios
   integer :: Natm
 
-    !call get_command_argument(1,filename)
-    !open(unit_out,file=trim(filename))
-    open(unit_out,file='coordinates.xyz') 
+    call get_command_argument(1,filename)
+    open(unit_out,file=trim(filename))
     read(unit_out,*,iostat=ios) Natm
     write(*,*) "Number of atoms = ",  Natm
     close(unit_out)
@@ -31,15 +30,22 @@ module config_io_module
     integer :: iatm
     integer :: Natm
 
-    !call get_command_argument(1,filename)
-    open(unit_out,file='coordinates.xyz')
-    !open(unit_out,file=trim(filename))
+    print*, 
+    print*, repeat("=",25) 
+    print*, "Cartesian Coordinates"
+    print*, 
+
+    call get_command_argument(1,filename)
+    open(unit_out,file=trim(filename))
     read(unit_out,*,iostat=ios)
     read(unit_out,*,iostat=ios)
     do iatm=1,Natm
        read(unit_out,*,iostat=ios) label(iatm), r(:,iatm)
+       write(*,*)  trim(label(iatm)), r(:,iatm)
     end do
     close(unit_out)
+   
+    print*, repeat("=",25) 
 
   end subroutine 
    
@@ -53,7 +59,7 @@ module config_io_module
 
    open(unit_out,file="connection.txt",status='old')
    read(unit_out,*) Nbond
-   write(*,*) " Number of bonds = ", Nbond
+   print*, "Number of bonds = ", Nbond
    allocate(vec1(Nbond),vec2(Nbond))
    do i=1,Nbond
      read(unit_out,*,iostat=ios) vec1(i), vec2(i) !connect(:,i)
@@ -96,7 +102,7 @@ module config_io_module
  
    end subroutine
  
- 
+
    subroutine print_output(Natm,label,r,fu1,fu2,nout,i,t,etot,epot,temp,ekin,epot_pair,epotLJ)
    
    implicit none
