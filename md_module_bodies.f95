@@ -172,9 +172,7 @@ module md_module
   integer :: pbc
   
   ! Assign LJ parameters
-  !sigma=1.88 ! !3.08 !  sigma=1 Ar ; 3.50 C   ; 1.66 O      
   sigma2=sigma**2
-  !eps=0.28 !0.025 !1.0d0 ; 0.66 C ; 0.285 O
   Rcut2=Rcut**2
   ! Initialize 
   do iatm=1,Natm
@@ -242,8 +240,6 @@ module md_module
   integer :: i
   integer, intent(in) :: pbc
   
-  ! Assign Spring and Bond parameters
-  !k=1.0d+03 ! spring constant harmonic
   k3=keq !1.0d+02 ! spring constant cubic
   k4=k3 !1.0d+02 ! spring constant quadratic
   Req2=Req**2
@@ -286,6 +282,7 @@ module md_module
  ! end do
   
   end subroutine
+
  
   subroutine set_pbc(r,Natm,dcell)
   ! Adjusts the atomic coordinates for periodic boundary conditions
@@ -323,6 +320,7 @@ module md_module
   etot2=etot**2
   
   end subroutine 
+
 
 !  subroutine initialize(x,y,z,vx,vy,vz,Natm)
 !  implicit none
