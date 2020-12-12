@@ -68,8 +68,7 @@ module config_io_module
 
   end subroutine
 
-  !subroutine read_nml(dt,Nstep,nout,dcell,rattle,Rcut,pbc)
-  subroutine read_nml(filename)
+  subroutine read_nml(filename,dt,Nstep,nout,dcell,rattle,Rcut,pbc)
   
   implicit none
   
