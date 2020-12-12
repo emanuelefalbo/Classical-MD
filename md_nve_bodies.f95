@@ -86,7 +86,7 @@ program main
 
    t=0.0
    mass=1.0
-   call read_nml(input_file)                                        ! Read in input data
+   call read_nml(input_file,dt,Nstep,nout,dcell,rattle,Rcut,pbc)    ! Read in input data
    call read_ff(Req,keq,lj_sigma,lj_eps)                            ! Read in FF parameters
    call read_natoms(Natm)                                           ! Read # atoms
    call allocate_arrays(Natm,label,r,rold,v,f,g,dcell,Rcut)         ! Allocate coordinates, label, and forces
