@@ -21,8 +21,8 @@ The code is written in FORTRAN95, the main code is the program `md_nve_bodies.f9
 nstep = total number of steps, nout = prints nout times the coordinates and thermodynamic quantities, decll = the lenght of the cubic cell,
 and rattle = 1 (0) turns on (off) the contraint on the atoms in the `connection.txt`. This last file needs to be a two columns file, containing bonds informations. For example, if bonds are between the atoms indexed as 1 and 3 , and 2 and 4, the first column can be written as:
 
-2
-1 3
+2 <br/>
+1 3 <br/>
 2 4
 
 
@@ -39,6 +39,6 @@ containing respectively the dynamics along the time (xyz-formatted coordinates),
 
 The `chain.xyz` is an atomic chain of four carbon atoms. Its values from the OPLS force field are in the ff_parm.txt file
 
-`$ ./build chain.xyz`
+`$ ./build chain.xyz` <br/>
 `$ ./md chain.xyz`
 
